@@ -1,0 +1,29 @@
+name: Przebieg testów
+description: Lista scenariuszy do wykonania. Zakłada ją zespół.
+title: "Przebieg testów — <data> — <szybki / regresja / pełny>"
+labels: ["przebieg"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Dla testera:** zaznaczaj wyniki przy scenariuszach według README, punkt 7.
+        Na koniec dodaj komentarz z podsumowaniem (README, punkt 9).
+  - type: input
+    id: adres
+    attributes:
+      label: Adres testowanej wersji
+      description: Niezmienny adres wersji aplikacji, którą testujesz. Wypełnia zespół.
+    validations:
+      required: true
+  - type: textarea
+    id: scenariusze
+    attributes:
+      label: Scenariusze
+      description: Lista wygenerowana poleceniem `node scripts/qa.mjs checklist <ważność>`.
+    validations:
+      required: true
+  - type: textarea
+    id: uwagi
+    attributes:
+      label: Uwagi od zespołu
+      description: Co jest nowe, czego nie testować, na co zwrócić uwagę.

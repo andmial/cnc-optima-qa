@@ -1,0 +1,95 @@
+name: Błąd
+description: Coś działa inaczej, niż opisuje scenariusz.
+title: "<ID scenariusza> — <co nie działa, jednym zdaniem>"
+labels: ["błąd"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Jeden błąd = jedno zgłoszenie. Przykład dobrego zgłoszenia jest w README, w punkcie 8.
+  - type: input
+    id: scenariusz
+    attributes:
+      label: Scenariusz i punkt
+      description: ID scenariusza i numer punktu z „Co powinno się stać”, który się nie zgadza.
+      placeholder: KON-031, punkt 2
+    validations:
+      required: true
+  - type: dropdown
+    id: waznosc
+    attributes:
+      label: Ważność scenariusza
+      options:
+        - krytyczny
+        - ważny
+        - dodatkowy
+    validations:
+      required: true
+  - type: input
+    id: konto
+    attributes:
+      label: Konto
+      description: Na jakim koncie byłeś zalogowany.
+      placeholder: Pracownik (Alfa CNC)
+    validations:
+      required: true
+  - type: dropdown
+    id: przegladarka
+    attributes:
+      label: Przeglądarka
+      options:
+        - Chrome
+        - Safari (Mac)
+        - Safari (iPhone)
+        - Firefox
+        - inna — napiszę w opisie
+    validations:
+      required: true
+  - type: dropdown
+    id: jezyk
+    attributes:
+      label: Język aplikacji
+      options:
+        - polski
+        - angielski
+    validations:
+      required: true
+  - type: textarea
+    id: kroki
+    attributes:
+      label: Co zrobiłeś
+      description: Kroki, które doprowadziły do błędu — z wartościami, które wpisałeś.
+    validations:
+      required: true
+  - type: textarea
+    id: oczekiwane
+    attributes:
+      label: Co powinno się stać
+      description: Przepisz punkt ze scenariusza.
+    validations:
+      required: true
+  - type: textarea
+    id: faktyczne
+    attributes:
+      label: Co się stało
+      description: Dokładnie, łącznie z treścią komunikatów.
+    validations:
+      required: true
+  - type: textarea
+    id: zrzut
+    attributes:
+      label: Zrzut ekranu
+      description: Przeciągnij tu obrazek albo film, albo wklej go (Ctrl+V / Cmd+V).
+    validations:
+      required: true
+  - type: dropdown
+    id: powtarzalnosc
+    attributes:
+      label: Czy błąd się powtarza?
+      description: Spróbuj jeszcze raz tymi samymi krokami.
+      options:
+        - tak, za każdym razem
+        - czasami
+        - zdarzył się raz, nie udało się powtórzyć
+    validations:
+      required: true

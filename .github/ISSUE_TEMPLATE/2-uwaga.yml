@@ -1,0 +1,30 @@
+name: Uwaga
+description: Coś spoza scenariuszy — błąd, literówka, coś mylącego albo pomysł.
+title: "Uwaga — <czego dotyczy>"
+labels: ["uwaga"]
+body:
+  - type: input
+    id: gdzie
+    attributes:
+      label: Gdzie
+      description: Ekran albo miejsce w aplikacji.
+      placeholder: Ustawienia → Profil użytkownika
+    validations:
+      required: true
+  - type: input
+    id: konto
+    attributes:
+      label: Konto
+      placeholder: Właściciel (Alfa CNC)
+  - type: textarea
+    id: opis
+    attributes:
+      label: Co zauważyłeś
+      description: Co jest nie tak albo co Cię zaskoczyło lub zmyliło.
+    validations:
+      required: true
+  - type: textarea
+    id: zrzut
+    attributes:
+      label: Zrzut ekranu
+      description: Jeśli się da — przeciągnij tu obrazek.
