@@ -130,7 +130,7 @@ tworzenie, edycję, usuwanie i to, jak rola działa w aplikacji.
 
 - [ ] W każdym z trzech przypadków pojawia się komunikat „Rola o tej nazwie już istnieje.” i nic się nie zapisuje.
 
-> Kod: `createRole` mapuje `23505` na `ROLE_NAME_TAKEN`, `updateRole` — nie (ogólny „Nie udało się zapisać roli”). Rozbieżność `R-13`
+> Kod: unikalny tylko `(company_id, key)` (migracja 048), `key` z `slugify(name)` przy tworzeniu; `updateRole` zmienia samo `name` — dziś krok 3 przechodzi, krok 2 też (`pracownik` ≠ `member`). Rozbieżność `R-13`, adrian-potepa/cnc-optima#136
 
 ### ROL-013 · Długość nazwy i opisu
 
